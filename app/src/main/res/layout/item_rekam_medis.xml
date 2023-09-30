@@ -1,0 +1,64 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    android:background="@color/primary_500"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:background="@color/primary_500"
+    android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageViewFoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/baseline_face_24"
+            android:tint="@color/white" />
+
+        <!-- Ganti dengan nomor RM yang sesuai -->
+
+<!-- Nama -->
+
+        <TextView
+            android:id="@+id/textViewRM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@id/circleImageViewFoto"
+            android:layout_toRightOf="@id/circleImageViewFoto"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Nomor RM: 12345"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewRM"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/circleImageViewFoto"
+            android:layout_toRightOf="@id/circleImageViewFoto"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Nama Pasien"
+            android:textColor="@color/white"
+            android:textSize="16sp" /> <!-- Ganti dengan nama yang sesuai -->
+
+</RelativeLayout>
+    </androidx.cardview.widget.CardView>
