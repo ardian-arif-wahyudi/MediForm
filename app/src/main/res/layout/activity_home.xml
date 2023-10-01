@@ -4,6 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/neutral_50"
     tools:context=".ui.HomeActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_500"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/mediform"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/baseline_medical_information_24"
+            android:layout_gravity="start"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_mediform"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="MediForm"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/add_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/baseline_group_add_24"
+            android:layout_gravity="end"
+            android:padding="10dp"
+            app:tint="@color/neutral_50" />
+
+        />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_wishlist"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        tools:listitem="@layout/item_rekam_medis"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
