@@ -39,7 +39,7 @@ class PasienDataAdapter(private var pasienData: List<PasienData>) : RecyclerView
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val noRMTextView: TextView = itemView.findViewById(R.id.textViewRM)
-        private val nameTextView: TextView = itemView.findViewById(R.id.textViewRM)
+        private val nameTextView: TextView = itemView.findViewById(R.id.textViewNama)
 
 
         fun bind(pasienData: PasienData) {
