@@ -23,28 +23,28 @@ class OnboardingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_onboarding)
 
-        slideViewPager = findViewById(R.id.slideViewPager)
+        val sharedPrefs = getSharedPreferences("AppPreferences", MODE_PRIVATE)
+        sharedPrefs.edit().putBoolean("isFirstRun", false).apply()
+
+        slideViewPager = findViewById(R.id.vp_slide)
         nextBtn = findViewById(R.id.btn_next)
         skipBtn = findViewById(R.id.btn_skip)
-        indicator1 = findViewById(R.id.indicator1)
-        indicator2 = findViewById(R.id.indicator2)
-        indicator3 = findViewById(R.id.indicator3)
+        indicator1 = findViewById(R.id.dot1)
+        indicator2 = findViewById(R.id.dot2)
+        indicator3 = findViewById(R.id.dot3)
 
         onboardingItems = listOf(
             OnboardingItem(
                 R.drawable.onboarding1,
-                "Expand Your Exploration",
-                "Jelajahi keajaiban,\ntemukan pengalaman tak terlupakan\ndalam petualangan tanpa batas\nbersama kami."
+                "Welcome to MediForm"
             ),
             OnboardingItem(
-                R.drawable.onboarding1,
-                "We are here as your\ntravel buddies",
-                "Siap menemani setiap langkah\npetualangan anda"
+                R.drawable.onboarding2,
+                "CRUD Rekam Medis"
             ),
             OnboardingItem(
-                R.drawable.onboarding1,
-                "Let’s do it",
-                ""
+                R.drawable.onboarding3,
+                "Let’s do it"
             )
         )
 
@@ -73,7 +73,7 @@ class OnboardingActivity : AppCompatActivity() {
             }
 
             override fun onPageScrollStateChanged(state: Int) {
-                // Tidak perlu melakukan apa pun di sini
+
             }
         })
 
