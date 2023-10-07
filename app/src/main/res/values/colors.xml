@@ -4,9 +4,10 @@
     <color name="white">#FFFFFFFF</color>
 
 
-    <color name="primary_500">#2180D9</color>
-    <color name="primary_400">#4D99E1</color>
-    <color name="secondary_500">#FF7916</color>
+    <color name="primary_500">#0583D2</color>
+    <color name="primary_400">#4FD6F7</color>
+    <color name="primary_300">#B8E3FF</color>
+    <color name="secondary_500">#FC8955</color>
     <color name="transparan">#00FFFFFF</color>
     <color name="red">#FF0000</color>
     <color name="neutral_50">#FFFFFFFF</color>

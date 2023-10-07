@@ -2,19 +2,22 @@
     <string name="app_name">MediForm</string>
     <string name="text_name">Nama Pasien</string>
     <string name="text_no_rm">No RM</string>
+
     <string name="text_tanggal_lahir">Tanggal Lahir</string>
     <string name="text_agama">Agama</string>
     <string name="text_jenis_kelamin">Jenis Kelamin</string>
     <string name="text_alamat">Alamat</string>
     <string name="text_pekerjaan">Pekerjaan</string>
-    <string name="text_status_askes">Status AsKes</string>
+    <string name="text_askes">Asuransi Kesehatan</string>
     <string name="text_status_kawin">Status Kawin</string>
     <string name="text_nama_penanggung_jawab">Nama Penanggung Jawab</string>
     <string name="text_golongan_darah">Golongan Darah</string>
     <string name="text_riwayat_penyakit">Riwayat Penyakit</string>
-    <string name="text_alergi_obat">Alergi Obat</string>
+    <string name="text_alergi_obat">Alergi Obat</string>    `
     <string name="text_keadaan_keluar">Keadaan Keluar</string>
     <string name="text_cara_keluar">Cara Keluar</string>
     <string name="text_dokter">Dokter</string>
     <string name="text_mediform">MediForm</string>
+    <string name="text_titik_dua">:</string>
+    <string name="text_strip">-</string>
 </resources>

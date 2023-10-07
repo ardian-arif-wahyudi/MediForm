@@ -42,7 +42,6 @@
             android:padding="10dp"
             app:tint="@color/neutral_50" />
 
-        />
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
