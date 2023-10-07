@@ -1,12 +1,15 @@
 package com.mediform.app.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mediform.app.R
+import com.mediform.app.data.PasienData
 import com.mediform.app.retrofit.ApiClient
 import com.mediform.app.retrofit.ApiService
 import kotlinx.coroutines.CoroutineScope
@@ -23,6 +26,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+
         apiService = ApiClient.getInstance()
         rv_pasien = findViewById(R.id.rv_pasien)
         rv_pasien.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false )
@@ -37,6 +41,15 @@ class HomeActivity : AppCompatActivity() {
                     // Jika response tidak kosong, Anda dapat langsung menggunakan datanya
                     pasienAdapter = PasienDataAdapter(response)
                     rv_pasien.adapter = pasienAdapter
+                    pasienAdapter.setOnItemClickListener(object : PasienDataAdapter.OnItemClickListener {
+                        override fun onItemClick(pasien: PasienData) {
+                            // Tangani acara klik item
+                            val intent = Intent(this@HomeActivity, DetailActivity::class.java)
+                            // Kirim data yang diperlukan ke DetailWisataActivity menggunakan intent
+                            intent.putExtra("pasienId", pasien.pasienId)
+                            startActivity(intent)
+                        }
+                    })
                 } else {
                     Toast.makeText(this@HomeActivity, "No data available", Toast.LENGTH_SHORT)
                         .show()

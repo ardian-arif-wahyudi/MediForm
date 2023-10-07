@@ -7,10 +7,10 @@ import retrofit2.Response
 import retrofit2.http.*
 
 interface ApiService {
-    @GET("api/Pasiens/1")
-    suspend fun getDataPasien(): PasienDataResponse
 
     @GET("api/Pasiens")
     suspend fun getAllDataPasien(): List<PasienData>
 
+    @GET("api/Pasiens/{pasienId}")
+    suspend fun getDataPasienById(@Path("pasienId") pasienId: String): PasienDataResponse
 }
