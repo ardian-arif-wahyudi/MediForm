@@ -48,6 +48,7 @@
                     android:textSize="20sp" />
 
                 <ImageView
+                    android:id="@+id/delete_btn"
                     android:layout_marginStart="180dp"
                     android:layout_width="30dp"
                     android:layout_height="match_parent"

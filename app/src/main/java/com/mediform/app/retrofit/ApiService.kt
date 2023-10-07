@@ -13,4 +13,8 @@ interface ApiService {
 
     @GET("api/Pasiens/{pasienId}")
     suspend fun getDataPasienById(@Path("pasienId") pasienId: String): PasienDataResponse
+
+    @DELETE("api/Pasiens/{pasienId}")
+    suspend fun deletePasienById(@Path("pasienId") pasienId: String): PasienDataResponse
+
 }

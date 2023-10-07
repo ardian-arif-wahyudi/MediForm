@@ -1,10 +1,13 @@
 package com.mediform.app.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.mediform.app.R
 import com.mediform.app.data.PasienDataResponse
 import com.mediform.app.databinding.ActivityDetailBinding
@@ -31,6 +34,12 @@ class DetailActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             onBackPressed()
         }
+
+        val deleteButton = findViewById<ImageView>(R.id.delete_btn)
+        deleteButton.setOnClickListener {
+            showDeleteConfirmationDialog()
+        }
+
         apiService = ApiClient.getInstance()
         getData()
     }
@@ -76,6 +85,38 @@ class DetailActivity : AppCompatActivity() {
                 val errorMessage = "Failed to fetch attraction data. Please check your internet connection."
                 Toast.makeText(this@DetailActivity, errorMessage, Toast.LENGTH_SHORT).show()
                 Log.e("API_FETCH_ERROR", errorMessage, e)
+            }
+        }
+    }
+    private fun showDeleteConfirmationDialog() {
+        val alertDialog = AlertDialog.Builder(this)
+        alertDialog.setTitle("Delete Data")
+        alertDialog.setMessage("Are you sure you want to delete this data?")
+        alertDialog.setPositiveButton("Yes") { _, _ ->
+            // Panggil metode untuk menghapus data
+            deleteData()
+        }
+        alertDialog.setNegativeButton("No") { dialog, _ ->
+            dialog.dismiss()
+        }
+        alertDialog.show()
+    }
+
+    private fun deleteData() {
+        val pasienId = intent.getIntExtra("pasienId", 0).toString()
+
+        CoroutineScope(Dispatchers.Main).launch {
+            try {
+                val response = apiService.deletePasienById(pasienId)
+                // Handle response (you may want to check if the deletion was successful)
+
+                // Setelah penghapusan berhasil, arahkan pengguna kembali ke HomeActivity
+                val intent = Intent(this@DetailActivity, HomeActivity::class.java)
+                startActivity(intent)
+
+            } catch (e: Exception) {
+                val errorMessage = "Failed to delete data. Please check your internet connection."
+                Log.e("API_DELETE_ERROR", errorMessage, e)
             }
         }
     }
